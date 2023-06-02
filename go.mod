@@ -1,4 +1,4 @@
-module github.com/sashkoristov/fService
+module github.com/FaaSTools/GoStorage
 
 go 1.18
 
