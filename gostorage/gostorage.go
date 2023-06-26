@@ -2,6 +2,7 @@ package gostorage
 
 import (
 	"fmt"
+	"io"
 	"os"
 )
 
@@ -80,6 +81,10 @@ func (s GoStorage) DeleteFileFromString(url string) {
 
 func (s GoStorage) UploadFile(source GoStorageObject) {
 	source.GetProvider(s.Credentials).uploadFile(source, source.LocalFilePath)
+}
+
+func (s GoStorage) DownloadFileAsReader(source GoStorageObject) io.Reader {
+	return source.GetProvider(s.Credentials).downloadFileAsReader(source)
 }
 
 func (s GoStorage) DownloadFile(source GoStorageObject, targetFile string) {
