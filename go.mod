@@ -1,4 +1,4 @@
-module github.com/dave-meyer/GoStorage
+module github.com/FaaSTools/GoStorage
 
 go 1.18
 
