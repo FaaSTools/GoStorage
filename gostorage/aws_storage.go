@@ -70,7 +70,6 @@ func (a AWSStorage) downloadFile(source GoStorageObject, targetFile string) {
 	}
 }
 
-// NEW - TEST
 func (a AWSStorage) downloadFileAsReader(source GoStorageObject) io.Reader {
 	getObjectOutput, err := a.getClientWithRegion(source.Region).GetObject(context.Background(), &aws_s3.GetObjectInput{Bucket: &source.Bucket, Key: &source.Key})
 	checkErr(err, fmt.Sprintf("unable to read from AWS storage object %v, Error: %v", source.Key, err))

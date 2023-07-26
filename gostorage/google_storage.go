@@ -67,7 +67,6 @@ func (g GoogleStorage) uploadFile(target GoStorageObject, sourceFile string) {
 	checkErr(err, fmt.Sprintf("unable to write to google storage, Error: %v", err))
 }
 
-// NEW - TEST
 func (g GoogleStorage) downloadFileAsReader(source GoStorageObject) io.Reader {
 	reader, err := g.getClient().Bucket(source.Bucket).Object(source.Key).NewReader(context.Background())
 	checkErr(err, fmt.Sprintf("unable to read from google storage object %v, Error: %v", source.Key, err))
